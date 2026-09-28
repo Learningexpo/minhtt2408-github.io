@@ -2,11 +2,446 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: replace every [bracketed] placeholder below with your own information. -->
+  <title>[Your Name] · [Your Field]</title>
+  <meta name="description" content="[One-sentence summary of who you are and what you work on.]">
+  <meta name="author" content="[Your Name]">
+  <link rel="canonical" href="https://minhtt24.github.io/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="[Your Name] · [Your Field]">
+  <meta property="og:description" content="[One-sentence summary for link previews.]">
+  <meta property="og:url" content="https://minhtt24.github.io/">
+  <meta property="og:image" content="https://minhtt24.github.io/images/avatar.svg">
+  <meta property="og:site_name" content="[Your Name]">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1113" media="(prefers-color-scheme: dark)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
-  <h1>Hello, I'm [Your Name]</h1>
-  <p>Welcome to my GitHub Pages site.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Icon sprite: reference with <svg><use href="#ic-NAME"/></svg>.
+       Available: mail, in (LinkedIn), scholar, gh (GitHub), x, book, orcid, web, star, fork, play -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="ic-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></symbol>
+    <symbol id="ic-in" viewBox="0 0 24 24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    <symbol id="ic-scholar" viewBox="0 0 24 24"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9c2.86 0 5.39 1.508 6.99 3.82L24 9.5 12 0Z"/></symbol>
+    <symbol id="ic-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/></symbol>
+    <symbol id="ic-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+    <symbol id="ic-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></symbol>
+    <symbol id="ic-orcid" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.5 4.5h3v15h-3v-15zm4.5 0h3v3h-3v-3zm0 4.5h3v10.5h-3V9z"/></symbol>
+    <symbol id="ic-web" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></symbol>
+    <symbol id="ic-star" viewBox="0 0 16 16"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></symbol>
+    <symbol id="ic-fork" viewBox="0 0 16 16"><path fill="currentColor" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/></symbol>
+    <symbol id="ic-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></symbol>
+  </svg>
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar" aria-label="Main">
+    <div class="container">
+      <a href="#about" class="nav-brand">[Your Name]</a>
+      <!-- Keep these in sync with the section ids below; remove links for sections you delete. -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#news">News</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#demos">Projects</a></li>
+        <li><a href="#people">People</a></li>
+        <li><a href="#opensource">Code</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#experience">Experience</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="false">
+          <svg id="iconSun" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364-.707-.707M6.343 6.343l-.707-.707m12.728 0-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
+          <svg id="iconMoon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 0 0 12 21a9.003 9.003 0 0 0 8.354-5.646z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+  <!-- ── Profile ── -->
+  <header class="hero" id="about">
+    <div class="container hero-grid">
+      <img src="images/avatar.svg" alt="Portrait of [Your Name]" class="hero-avatar" width="144" height="144" fetchpriority="high">
+      <div class="hero-heading">
+        <p class="eyebrow">[Topic] · [Topic] · [Topic]</p>
+        <h1 class="hero-name">[Your Name]</h1>
+        <p class="hero-roles quiet">[Your Role], <a href="https://example.com" target="_blank" rel="noopener">[Organization]</a><br>[Second Role], <a href="https://example.com" target="_blank" rel="noopener">[Organization]</a></p>
+      </div>
+      <div class="hero-content">
+        <p class="hero-lede">[One bold sentence describing what you study or build.]</p>
+        <p class="hero-intro">[Two or three sentences expanding on your work. You can <a href="#research">link to a section</a> of the page.]</p>
+          <ul class="hero-links">
+            <li><a href="mailto:[you@example.com]"><svg aria-hidden="true" focusable="false"><use href="#ic-mail"/></svg>[you@example.com]</a></li>
+            <li><a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#ic-scholar"/></svg>Google Scholar</a></li>
+            <li><a href="https://github.com/minhtt24" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#ic-gh"/></svg>GitHub</a></li>
+            <li><a href="https://orcid.org/[ID]" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#ic-orcid"/></svg>ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/[handle]/" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#ic-in"/></svg>LinkedIn</a></li>
+            <li><a href="https://x.com/[handle]" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false"><use href="#ic-x"/></svg>X</a></li>
+          </ul>
+        <p class="hero-invite"><a href="#experience">[Optional call to action]</a> [A short closing line.]</p>
+      </div>
+    </div>
+  </header>
+
+    <!-- ── News ── -->
+    <section class="section" id="news">
+      <div class="container">
+        <h2 class="section-title">Latest news</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <time class="news-date" datetime="2026-09">Sep 2026</time>
+            <span class="news-text"><strong><a href="https://example.com" target="_blank" rel="noopener">[Paper or project title]</a></strong> has been accepted at [Venue]. [One-sentence summary.]</span>
+          </li>
+          <li class="news-item">
+            <time class="news-date" datetime="2026-08">Aug 2026</time>
+            <span class="news-text">[Another news item.]</span>
+          </li>
+        </ul>
+        <!-- Older items go inside this collapsible block. -->
+        <details class="news-more">
+          <summary>Earlier news</summary>
+          <ul class="news-list">
+            <li class="news-item">
+              <time class="news-date" datetime="2026-01">Jan 2026</time>
+              <span class="news-text">[Older news item.]</span>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── Research ── -->
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">Research</h2>
+          <div class="section-tools">
+            <!-- Shown by script.js; pauses/plays GIF figures. Keep it even if you have no GIFs. -->
+            <button class="motion-toggle" id="motionToggle" type="button" hidden>Pause animations</button>
+            <a class="section-link" href="https://example.com">[Slides or CV] <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <h3 class="research-thesis">[Your research theme in a few words]</h3>
+        <p class="section-intro">[A paragraph describing your overall research agenda.]</p>
+
+        <div class="research-threads">
+          <!-- Copy this <article> for each research direction. -->
+          <article class="research-thread">
+            <figure class="research-figure">
+              <img src="images/placeholder.svg" alt="[Describe the figure]" width="640" height="360" loading="lazy">
+              <figcaption>[Figure caption]</figcaption>
+            </figure>
+            <div class="research-body">
+              <p class="eyebrow">01 / [Area]</p>
+              <h3>[Research direction title]</h3>
+              <p class="research-question">[The central question this direction asks?]</p>
+              <p>[What you do in this direction and how.]</p>
+              <p class="research-papers"><a href="#pub-example-1">[Paper A]</a> · <a href="#pub-example-2">[Paper B]</a></p>
+            </div>
+          </article>
+          <article class="research-thread">
+            <figure class="research-figure">
+              <img src="images/placeholder.svg" alt="[Describe the figure]" width="640" height="360" loading="lazy">
+              <figcaption>[Figure caption]</figcaption>
+            </figure>
+            <div class="research-body">
+              <p class="eyebrow">02 / [Area]</p>
+              <h3>[Research direction title]</h3>
+              <p class="research-question">[The central question this direction asks?]</p>
+              <p>[What you do in this direction and how.]</p>
+              <p class="research-papers"><a href="#pub-example-3">[Paper C]</a></p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Optional: a side interest shown in a two-column box. -->
+        <div class="research-physics">
+          <div>
+            <p class="eyebrow">A further research interest</p>
+            <h3>[Side interest]</h3>
+          </div>
+          <div>
+            <p>[Describe it briefly.]</p>
+          </div>
+        </div>
+        <!-- Optional: a closing paragraph tying the directions together. -->
+        <div class="research-outlook">
+          <h3>How the directions connect</h3>
+          <p>[How your research directions fit together and where they are heading.]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Publications ── -->
+    <section class="section" id="publications">
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
+        <p class="pub-note">* equal contribution. A blue rule marks representative papers. See also <a href="https://scholar.google.com/citations?user=[ID]" target="_blank" rel="noopener">Google Scholar</a>.</p>
+
+        <!-- Filter buttons: data-value must match the words used in each paper's data-topic / data-year. -->
+        <div class="pub-filters" role="group" aria-label="Filter publications">
+          <div class="filter-group" role="group" aria-label="Topic">
+            <span class="filter-label">Topic</span>
+            <button type="button" class="pub-filter-btn" data-kind="topic" data-value="all" aria-pressed="true">All</button>
+            <button type="button" class="pub-filter-btn" data-kind="topic" data-value="topic-a" aria-pressed="false">[Topic A]</button>
+            <button type="button" class="pub-filter-btn" data-kind="topic" data-value="topic-b" aria-pressed="false">[Topic B]</button>
+          </div>
+          <div class="filter-group" role="group" aria-label="Year">
+            <span class="filter-label">Year</span>
+            <button type="button" class="pub-filter-btn" data-kind="year" data-value="all" aria-pressed="true">All</button>
+            <button type="button" class="pub-filter-btn" data-kind="year" data-value="2026" aria-pressed="false">2026</button>
+            <button type="button" class="pub-filter-btn" data-kind="year" data-value="2025" aria-pressed="false">2025</button>
+          </div>
+        </div>
+
+        <div class="pub-year-group" data-year="2026">
+          <h3 class="pub-year">2026</h3>
+          <ol class="pub-list">
+          <!-- "pub-highlight" adds the blue rule for representative papers; drop it for normal ones.
+               data-topic can list several space-separated topics. -->
+          <li class="pub-item pub-highlight" id="pub-example-1" data-year="2026" data-topic="topic-a">
+            <div class="pub-thumb"><img src="images/placeholder.svg" alt="" width="640" height="360" loading="lazy"></div>
+            <div class="pub-body">
+              <h4 class="pub-title"><span class="visually-hidden">Representative paper: </span><a href="https://example.com" target="_blank" rel="noopener">[Paper Title]</a></h4>
+              <p class="pub-authors">[Co-author], <span class="me">[Your Name]</span>, [Co-author]</p>
+              <p class="pub-tldr">[One- or two-sentence TL;DR of the paper.]</p>
+              <div class="pub-meta"><span class="pub-venue">[Venue 2026]</span><span class="pub-links"><a href="https://arxiv.org/abs/[id]" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/[repo]" target="_blank" rel="noopener">Code</a><a href="https://example.com" target="_blank" rel="noopener">Project page</a></span></div>
+              <details class="bib"><summary>BibTeX</summary><pre>@inproceedings{key2026,
+  title     = {[Paper Title]},
+  author    = {[Last, First and Last, First]},
+  booktitle = {[Venue]},
+  year      = {2026}
+}</pre></details>
+            </div>
+          </li>
+          <li class="pub-item" id="pub-example-2" data-year="2026" data-topic="topic-b">
+            <div class="pub-thumb"><img src="images/placeholder.svg" alt="" width="640" height="360" loading="lazy"></div>
+            <div class="pub-body">
+              <h4 class="pub-title"><a href="https://example.com" target="_blank" rel="noopener">[Paper Title]</a></h4>
+              <p class="pub-authors"><span class="me">[Your Name]</span>, [Co-author]</p>
+              <p class="pub-tldr">[TL;DR.]</p>
+              <!-- Use pub-status instead of pub-venue for preprints / under review. -->
+              <div class="pub-meta"><span class="pub-status">Under review (2026)</span><span class="pub-links"><a href="https://arxiv.org/abs/[id]" target="_blank" rel="noopener">arXiv</a></span></div>
+              <details class="bib"><summary>BibTeX</summary><pre>@misc{key2026b,
+  title  = {[Paper Title]},
+  author = {[Last, First and Last, First]},
+  year   = {2026}
+}</pre></details>
+            </div>
+          </li>
+          </ol>
+        </div>
+
+        <div class="pub-year-group" data-year="2025">
+          <h3 class="pub-year">2025</h3>
+          <ol class="pub-list">
+          <li class="pub-item" id="pub-example-3" data-year="2025" data-topic="topic-a topic-b">
+            <div class="pub-thumb"><img src="images/placeholder.svg" alt="" width="640" height="360" loading="lazy"></div>
+            <div class="pub-body">
+              <h4 class="pub-title"><a href="https://example.com" target="_blank" rel="noopener">[Paper Title]</a></h4>
+              <p class="pub-authors">[Co-author], <span class="me">[Your Name]</span></p>
+              <p class="pub-tldr">[TL;DR.]</p>
+              <div class="pub-meta"><span class="pub-venue">[Venue 2025]</span><span class="pub-links"><a href="https://doi.org/[doi]" target="_blank" rel="noopener">DOI</a></span></div>
+              <details class="bib"><summary>BibTeX</summary><pre>@article{key2025,
+  title   = {[Paper Title]},
+  author  = {[Last, First and Last, First]},
+  journal = {[Journal]},
+  year    = {2025}
+}</pre></details>
+            </div>
+          </li>
+          </ol>
+        </div>
+        <p class="pub-empty" id="pubEmpty" hidden>No papers match both filters.</p>
+        <p class="visually-hidden" id="pubStatus" role="status"></p>
+      </div>
+    </section>
+
+    <!-- ── Projects / demos (video cards) ── -->
+    <section class="section" id="demos">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-intro">[Short introduction to your projects or demos.]</p>
+        <div class="demo-grid">
+          <!-- For a YouTube video, use https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg as the image. -->
+          <article class="demo-card">
+            <a href="https://www.youtube.com/watch?v=[VIDEO_ID]" target="_blank" rel="noopener" class="demo-thumb" aria-label="Watch video: [Project title]">
+              <img src="images/placeholder.svg" alt="" width="480" height="270" loading="lazy">
+              <span class="demo-play"><svg aria-hidden="true" focusable="false"><use href="#ic-play"/></svg></span>
+            </a>
+            <div class="demo-body">
+              <h3>[Project title]</h3>
+              <p>[What the project or demo shows.]</p>
+              <a href="https://example.com" target="_blank" rel="noopener">Project page<span class="visually-hidden">: [Project title]</span></a>
+            </div>
+          </article>
+          <article class="demo-card">
+            <a href="https://www.youtube.com/watch?v=[VIDEO_ID]" target="_blank" rel="noopener" class="demo-thumb" aria-label="Watch video: [Project title]">
+              <img src="images/placeholder.svg" alt="" width="480" height="270" loading="lazy">
+              <span class="demo-play"><svg aria-hidden="true" focusable="false"><use href="#ic-play"/></svg></span>
+            </a>
+            <div class="demo-body">
+              <h3>[Project title]</h3>
+              <p>[What the project or demo shows.]</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── People ── -->
+    <section class="section" id="people">
+      <div class="container">
+        <h2 class="section-title">People</h2>
+        <p class="section-intro">[Collaborators, labmates, or advisors.]</p>
+        <h3 class="people-category-title">[Category, e.g. Collaborators]</h3>
+        <div class="people-grid">
+          <!-- A GitHub avatar works as a photo: https://github.com/USERNAME.png?size=96 -->
+          <div class="people-card">
+            <img class="people-avatar" src="images/avatar.svg" alt="" width="48" height="48" loading="lazy">
+            <div class="people-info">
+                <span class="people-name">[Person Name]</span>
+                <span class="people-links"><a href="https://example.com" target="_blank" rel="noopener" aria-label="[Person Name]'s website"><svg aria-hidden="true" focusable="false"><use href="#ic-web"/></svg></a><a href="https://github.com/[user]" target="_blank" rel="noopener" aria-label="[Person Name] on GitHub"><svg aria-hidden="true" focusable="false"><use href="#ic-gh"/></svg></a></span>
+            </div>
+          </div>
+          <div class="people-card">
+            <img class="people-avatar" src="images/avatar.svg" alt="" width="48" height="48" loading="lazy">
+            <div class="people-info">
+                <span class="people-name">[Person Name]</span>
+                <span class="people-links"><a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="[Person Name] on Google Scholar"><svg aria-hidden="true" focusable="false"><use href="#ic-scholar"/></svg></a></span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="people-category-title">[Category, e.g. Past collaborators]</h3>
+        <div class="people-grid">
+          <!-- "people-past" renders the card in a muted style. -->
+          <div class="people-card people-past">
+            <img class="people-avatar" src="images/avatar.svg" alt="" width="48" height="48" loading="lazy">
+            <div class="people-info">
+                <span class="people-name">[Person Name]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Open source ── -->
+    <section class="section" id="opensource">
+      <div class="container">
+        <h2 class="section-title">Open source</h2>
+        <p class="section-intro">[Short introduction to your code.]</p>
+        <div class="repo-grid">
+          <!-- data-repo="owner/name" lets script.js fetch live star/fork counts from GitHub. -->
+          <a class="repo-card" href="https://github.com/minhtt24/[repo]" target="_blank" rel="noopener" data-repo="minhtt24/[repo]">
+            <span class="repo-name"><span class="repo-owner">minhtt24/</span>[repo]</span>
+            <span class="repo-desc">[What the repository does.]</span>
+            <span class="repo-meta"><span class="repo-lang"><i class="lang-dot" style="background:#3572A5"></i>Python</span><span class="repo-stats"><span class="repo-stat" title="Stars"><svg aria-hidden="true" focusable="false"><use href="#ic-star"/></svg><span class="visually-hidden">Stars: </span><span class="repo-stars">0</span></span><span class="repo-stat" title="Forks"><svg aria-hidden="true" focusable="false"><use href="#ic-fork"/></svg><span class="visually-hidden">Forks: </span><span class="repo-forks">0</span></span></span></span>
+          </a>
+          <a class="repo-card" href="https://github.com/minhtt24/[repo]" target="_blank" rel="noopener" data-repo="minhtt24/[repo]">
+            <span class="repo-name"><span class="repo-owner">minhtt24/</span>[repo]</span>
+            <span class="repo-desc">[What the repository does.]</span>
+            <span class="repo-meta"><span class="repo-lang"><i class="lang-dot" style="background:#f34b7d"></i>C++</span><span class="repo-stats"><span class="repo-stat" title="Stars"><svg aria-hidden="true" focusable="false"><use href="#ic-star"/></svg><span class="visually-hidden">Stars: </span><span class="repo-stars">0</span></span><span class="repo-stat" title="Forks"><svg aria-hidden="true" focusable="false"><use href="#ic-fork"/></svg><span class="visually-hidden">Forks: </span><span class="repo-forks">0</span></span></span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Teaching & service ── -->
+    <section class="section" id="teaching">
+      <div class="container">
+        <h2 class="section-title">Teaching &amp; service</h2>
+        <h3 class="subsection-title">Courses</h3>
+        <ul class="teach-list">
+          <li class="teach-item">
+            <span class="teach-name"><a href="https://example.com" target="_blank" rel="noopener">[Course name]</a><span class="teach-role">Teaching assistant</span></span>
+            <span class="teach-meta">[Term, Year]</span>
+          </li>
+          <li class="teach-item">
+            <span class="teach-name">[Course name]</span>
+            <span class="teach-meta">[Term, Year]</span>
+          </li>
+        </ul>
+        <h3 class="subsection-title">Reviewing</h3>
+        <dl class="service-list">
+          <dt>[Role, e.g. Reviewer]</dt><dd>[Venues]</dd>
+        </dl>
+        <h3 class="subsection-title">Talks &amp; resources</h3>
+        <ul class="resource-list">
+          <li><strong>[Talk title]</strong> · [Venue, Year]. <a href="https://example.com">Slides</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Experience ── -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience &amp; education</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-time">[Start]–present<br>[City, Country]</div>
+            <div class="timeline-content">
+              <h3>[Position]</h3>
+              <div class="timeline-org"><a href="https://example.com" target="_blank" rel="noopener">[Organization]</a></div>
+              <div class="timeline-desc"><p>[What you do there.]</p></div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">[Start]–[End]<br>[City, Country]</div>
+            <div class="timeline-content">
+              <h3>[Degree]</h3>
+              <div class="timeline-org">[University]</div>
+              <div class="timeline-desc"><p>[Thesis, advisor, or highlights.]</p></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>Contact</h2>
+        <p><a href="mailto:[you@example.com]">[you@example.com]</a></p>
+        <p>[City, Country]</p>
+      </div>
+      <div class="quiet">
+        <h2>Elsewhere</h2>
+        <ul>
+          <li><a href="https://example.com" target="_blank" rel="noopener">[Institutional profile]</a></li>
+          <li><a href="#experience">Experience &amp; education</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>This site</h2>
+        <p>Last updated [Month Year].</p>
+        <p>© 2026 [Your Name]</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
